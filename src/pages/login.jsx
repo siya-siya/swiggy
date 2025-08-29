@@ -1,12 +1,64 @@
 import React, { useState } from "react";
+import { BACKEND_URL } from "../config";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleLogin = () => {
-    console.log("Username:", username, "Password:", password);
-    alert("Login clicked!");
+  // 🔹 STATIC FUNCTION (Fake backend, just for testing without real server)
+  const fakeBackendLogin = async (username, password) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // Example static user
+        if (username === "testuser" && password === "12345") {
+          resolve({ success: true, message: "Login successful!" });
+        } else {
+          reject({ success: false, message: "Invalid username or password" });
+        }
+      }, 1000); // fake delay of 1 second
+    });
+  };
+
+  // 🔹 DYNAMIC FUNCTION (Calls your real backend API at BACKEND_URL)
+  const realBackendLogin = async () => {
+    try {
+      const response = await fetch(`${BACKEND_URL}login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Login successful!"); 
+        // ✅ You can save token or user info here
+        // localStorage.setItem("token", result.token);
+      } else {
+        setError(result.message || "Login failed");
+      }
+    } catch (error) {
+      setError(error.message || "Network error");
+    }
+  };
+
+  // 🔹 Switch easily between static / dynamic function here
+  const handleLogin = async () => {
+    setError(""); // clear old error
+    try {
+      // 👉 USE THIS for static fake login
+      const result = await fakeBackendLogin(username, password);
+      alert(result.message);
+
+      // 👉 USE THIS for real backend login
+      // await realBackendLogin();
+
+    } catch (err) {
+      setError(err.message || "Login failed");
+    }
   };
 
   return (
@@ -35,6 +87,8 @@ const Login = () => {
       >
         Login
       </button>
+
+      {error && <p className="text-red-500 mt-4">{error}</p>}
     </div>
   );
 };
