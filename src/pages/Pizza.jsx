@@ -1,50 +1,49 @@
 // src/pages/PizzaPage.jsx
 import React from "react";
 import { SlidersHorizontal, ChevronDown, Clock } from "lucide-react";
-import { getPizza} from "../API/Api";
-const restaurants = await getPizza();
-//const restaurants = [
-  //{
-//     id: 1,
-//     name: "Oven Story Pizza",
-//     rating: 4.6,
-//     time: "25-30 mins",
-//     offer: "20% OFF",
-//     items: "Pizzas, Pastas, Italian, Desserts",
-//     location: "Bais Godam",
-//     img: " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/5/29/4c378225-63f5-4f87-806a-8afcab2c98ce_223159.jpg   ",
-//   },
-//   {
-//     id: 2,
-//     name: "Pizza Hut",
-//     rating: 4.2,
-//     time: "25-30 mins",
-//     offer: "ITEMS AT ₹99",
-//     items: "Pizzas",
-//     location: "Bais Godam",
-//     img: " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/9/4f2f9d35-895a-4f66-b015-d38bf551cac4_53744.JPG      ",
-//   },
-//   {
-//     id: 3,
-//     name: "Pastas By Pizza Hut",
-//     rating: 3.8,
-//     time: "25-30 mins",
-//     offer: "",
-//     items: "Pastas",
-//     location: "Bais Godam",
-//     img: " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2025/6/16/47ff36f6-9ae0-41e9-aa58-61a61c77bdfd_068cc99c-a082-403c-9e9a-295d6b303a7d.png_compressed        ",
-//   },
-//   {
-//     id: 4,
-//     name: "Chicago Pizza",
-//     rating: 3.9,
-//     time: "35-40 mins",
-//     offer: "ITEMS AT ₹99",
-//     items: "Desserts, Italian, Beverages",
-//     location: "C Scheme",
-//     img: "   https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2024/7/9/f5142936-32cc-4463-a453-83c5af0b1022_4da0a8d7-e5eb-4781-a6f2-c79c82f0513a.jpg     ",
-//   },
-// ];
+
+const restaurants = [
+  {
+    id: 1,
+    name: "Oven Story Pizza",
+    rating: 4.6,
+    time: "25-30 mins",
+    offer: "20% OFF",
+    items: "Pizzas, Pastas, Italian, Desserts",
+    location: "Bais Godam",
+    img: " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/5/29/4c378225-63f5-4f87-806a-8afcab2c98ce_223159.jpg   ",
+  },
+  {
+    id: 2,
+    name: "Pizza Hut",
+    rating: 4.2,
+    time: "25-30 mins",
+    offer: "ITEMS AT ₹99",
+    items: "Pizzas",
+    location: "Bais Godam",
+    img: " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/9/4f2f9d35-895a-4f66-b015-d38bf551cac4_53744.JPG      ",
+  },
+  {
+    id: 3,
+    name: "Pastas By Pizza Hut",
+    rating: 3.8,
+    time: "25-30 mins",
+    offer: "",
+    items: "Pastas",
+    location: "Bais Godam",
+    img: " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2025/6/16/47ff36f6-9ae0-41e9-aa58-61a61c77bdfd_068cc99c-a082-403c-9e9a-295d6b303a7d.png_compressed        ",
+  },
+  {
+    id: 4,
+    name: "Chicago Pizza",
+    rating: 3.9,
+    time: "35-40 mins",
+    offer: "ITEMS AT ₹99",
+    items: "Desserts, Italian, Beverages",
+    location: "C Scheme",
+    img: "   https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2024/7/9/f5142936-32cc-4463-a453-83c5af0b1022_4da0a8d7-e5eb-4781-a6f2-c79c82f0513a.jpg     ",
+  },
+];
 const Pizza = () => {
   return (
     <div className="px-6 py-6">

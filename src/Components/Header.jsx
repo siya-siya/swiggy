@@ -1,20 +1,21 @@
+// src/Components/Navbar.js
 import React, { useState } from "react";
 import { Search, MapPin, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { BACKEND_URL } from "../config"; // Import backend endpoint
+import { BACKEND_URL } from "../config"; // backend endpoint
 
 const Navbar = () => {
   const [showSignIn, setShowSignIn] = useState(false);
   const [otpSent, setOtpSent] = useState(false);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
   const [otp, setOtp] = useState("");
   const navigate = useNavigate();
 
-  // Handler for OTP generation
+  // Send OTP
   const handleSendOtp = async () => {
     try {
-      // Example POST request to backend for OTP
       const response = await fetch(`${BACKEND_URL}/api/send-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -31,25 +32,18 @@ const Navbar = () => {
     }
   };
 
-  // Handler for Sign In (redirect to login page)
-  const handleSignIn = () => {
-    setShowSignIn(false);
-    navigate("/login");
-  };
-
-  // Handler for Sign Up (after signup, redirect to login)
+  // Sign Up → then redirect to login
   const handleSignUp = async () => {
     try {
-      // Example POST request to backend for signup
       const response = await fetch(`${BACKEND_URL}/api/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, phone, otp }),
+        body: JSON.stringify({ email, phone, password, otp }),
       });
       if (response.ok) {
         alert("Signup successful! Please login.");
         setShowSignIn(false);
-        navigate("/pages/login"); // Redirect to login page
+        navigate("/login"); // ✅ Correct path
       } else {
         alert("Signup failed");
       }
@@ -63,7 +57,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         {/* Left Section */}
         <div className="flex items-center space-x-6">
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-1 cursor-pointer" onClick={() => navigate("/")}>
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/1/13/Swiggy_logo.png"
               alt="Swiggy"
@@ -77,6 +71,7 @@ const Navbar = () => {
             <span className="ml-1 text-xs">▼</span>
           </div>
         </div>
+
         {/* Middle Section */}
         <div className="flex-1 max-w-xl mx-6">
           <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2">
@@ -88,24 +83,28 @@ const Navbar = () => {
             />
           </div>
         </div>
+
         {/* Right Section (Profile) */}
         <div className="flex items-center">
           <User
-            className="w-6 h-6 text-black-700 cursor-pointer"
+            className="w-6 h-6 text-gray-700 cursor-pointer"
             onClick={() => setShowSignIn(true)}
           />
         </div>
       </div>
-      {/* Popup Sign In Form */}
+
+      {/* Popup Sign In / Sign Up Form */}
       {showSignIn && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-xl shadow-lg w-96 relative">
             <h2 className="text-xl font-bold mb-4 text-center">Sign up</h2>
+
             <input
               type="text"
               placeholder="Full Name"
               className="w-full mb-3 px-3 py-2 border rounded-lg"
             />
+
             <input
               type="email"
               placeholder="Email Address"
@@ -113,6 +112,7 @@ const Navbar = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+
             <input
               type="tel"
               placeholder="Phone Number"
@@ -120,11 +120,15 @@ const Navbar = () => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
+
             <input
               type="password"
               placeholder="Password"
               className="w-full mb-3 px-3 py-2 border rounded-lg"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
+
             <div className="flex space-x-2 mb-3">
               <input
                 type="text"
@@ -141,14 +145,14 @@ const Navbar = () => {
                 {otpSent ? "OTP Sent" : "Send OTP"}
               </button>
             </div>
-            {/* Sign Up Button → redirects to login after signup */}
+
             <button
               onClick={handleSignUp}
               className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg"
             >
               Sign Up
             </button>
-            {/* Close Button */}
+
             <button
               onClick={() => setShowSignIn(false)}
               className="absolute top-2 right-3 text-gray-600 hover:text-black"

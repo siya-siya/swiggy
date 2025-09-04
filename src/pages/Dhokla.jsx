@@ -1,6 +1,6 @@
 // src/Pages/Dhokla.jsx
 import React from "react";
-
+import { Star } from "lucide-react";
 const restaurants = [
   {
     id: 1,

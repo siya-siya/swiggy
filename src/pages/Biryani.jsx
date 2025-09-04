@@ -1,49 +1,48 @@
 import React from "react";
 import { SlidersHorizontal } from "lucide-react";
-import { getBiryani }  from "../API/Api";
-const restaurants = await getBiryani();
-// const restaurants = [
-//   {
-//     id: 1,
-//     name: "The Good Bowl",
-//     rating: 4.3,
-//     time: "20-25 mins",
-//     cuisines: "Biryani, North Indian, Pastas, Punjabi",
-//     location: "Bais Godam",
-//     price: "₹119",
-//     img: "https://b.zmtcdn.com/data/pictures/chains/0/18386100/food1.jpg",
-//   },
-//   {
-//     id: 2,
-//     name: "Behrouz Biryani",
-//     rating: 4.3,
-//     time: "25-30 mins",
-//     cuisines: "Biryani, North Indian, Kebabs, Mughlai",
-//     location: "Bais Godam",
-//     price: "₹99",
-//     img: "https://b.zmtcdn.com/data/pictures/chains/1/18946291/food2.jpg",
-//   },
-//   {
-//     id: 3,
-//     name: "The Biryani Life",
-//     rating: 4.2,
-//     time: "20-25 mins",
-//     cuisines: "Biryani, Mughlai, Lucknowi",
-//     location: "Bais Godam",
-//     price: "₹159",
-//     img: "https://b.zmtcdn.com/data/pictures/chains/2/18946392/food3.jpg",
-//   },
-//   {
-//     id: 4,
-//     name: "Mughal Restaurant",
-//     rating: 4.0,
-//     time: "20-25 mins",
-//     cuisines: "North Indian, Biryani, Mughlai, Kebabs",
-//     location: "Hasan Pura",
-//     offer: "60% OFF Upto ₹120",
-//     img: "https://b.zmtcdn.com/data/pictures/chains/3/18946393/food4.jpg",
-//   },
-// ];
+
+const restaurants = [
+  {
+    id: 1,
+    name: "The Good Bowl",
+    rating: 4.3,
+    time: "20-25 mins",
+    cuisines: "Biryani, North Indian, Pastas, Punjabi",
+    location: "Bais Godam",
+    price: "₹119",
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/FOOD_CATALOG/IMAGES/CMS/2025/2/11/afe984c3-57eb-4ca8-b459-9258a62ca3c9_9a889d30-8117-4e78-ae8c-0616ae388be4.JPG  ",
+  },
+  {
+    id: 2,
+    name: "Behrouz Biryani",
+    rating: 4.3,
+    time: "25-30 mins",
+    cuisines: "Biryani, North Indian, Kebabs, Mughlai",
+    location: "Bais Godam",
+    price: "₹99",
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/FOOD_CATALOG/IMAGES/CMS/2025/5/11/37f44124-8087-4dd6-b48f-d91810e3831c_0452b182-5f7c-4a82-a603-778f8f62a49d.jpeg  ",
+  },
+  {
+    id: 3,
+    name: "The Biryani Life",
+    rating: 4.2,
+    time: "20-25 mins",
+    cuisines: "Biryani, Mughlai, Lucknowi",
+    location: "Bais Godam",
+    price: "₹159",
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/FOOD_CATALOG/IMAGES/CMS/2025/5/14/4f3a6687-3dda-43fe-a36d-8c97946234fe_97e8e3bb-aa8a-4087-b6c5-c855ff500ad1.jpg ",
+  },
+  {
+    id: 4,
+    name: "Mughal Restaurant",
+    rating: 4.0,
+    time: "20-25 mins",
+    cuisines: "North Indian, Biryani, Mughlai, Kebabs",
+    location: "Hasan Pura",
+    offer: "60% OFF Upto ₹120",
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/FOOD_CATALOG/IMAGES/CMS/2025/7/2/8bf3bbe1-bccf-4067-9340-4ef0ce3caf28_4928d658-b637-4deb-8c57-b975167aaf4e.jpeg  ",
+  },
+];
 
 const BiryaniPage = () => {
   return (

@@ -1,3 +1,4 @@
+// src/pages/Dashboard.jsx
 import React, { useEffect, useState } from "react";
 import Categories from "../Components/Categories";
 import OrderOnline from "../Components/OrderOnline";
@@ -10,38 +11,51 @@ const Dashboard = () => {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    // --- STATIC DATA (Uncomment for testing without backend) ---
+    // --- STATIC DATA (for testing without backend) ---
     /*
     setCategories([
-      { name: "Pizza", image: "...", link: "/pizza" },
-      { name: "Burger", image: "...", link: "/burger" },
-      // ...other categories
+      { name: "Pizza", image: "pizza.jpg", link: "/pizza" },
+      { name: "Burger", image: "burger.jpg", link: "/burger" },
     ]);
+
     setOrders([
-      { name: "Burger King", img: "...", offer: "ITEMS AT ₹59", rating: "4.2", time: "35-40 mins", cuisines: "Burgers, American", location: "Vaishali Nagar" },
-      // ...other orders
+      {
+        name: "Burger King",
+        img: "burger.jpg",
+        offer: "ITEMS AT ₹59",
+        rating: "4.2",
+        time: "35-40 mins",
+        cuisines: "Burgers, American",
+        location: "Vaishali Nagar",
+      },
     ]);
+
     setRestaurants([
-      { name: "Burger King", img: "...", offer: "ITEMS AT ₹59", rating: "4.2", time: "35-40 mins", cuisines: "Burgers, American", location: "Vaishali Nagar" },
-      // ...other restaurants
+      {
+        name: "Burger Farm",
+        img: "burgerfarm.jpg",
+        offer: "₹150 OFF ABOVE ₹499",
+        rating: "4.5",
+        time: "15-20 mins",
+        cuisines: "American, Italian-American",
+        location: "C Scheme",
+      },
     ]);
-    return; // Remove this line when using backend
+    return;
     */
+
     // --- BACKEND DATA ---
-    // Fetch categories
-    fetch(`${BACKEND_URL}categories`)
+    fetch(`${BACKEND_URL}/categories`)
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch(() => setCategories([]));
 
-    // Fetch orders
-    fetch(`${BACKEND_URL}orders`)
+    fetch(`${BACKEND_URL}/orders`)
       .then((res) => res.json())
       .then((data) => setOrders(data))
       .catch(() => setOrders([]));
 
-    // Fetch restaurants
-    fetch(`${BACKEND_URL}restaurants`)
+    fetch(`${BACKEND_URL}/restaurants`)
       .then((res) => res.json())
       .then((data) => setRestaurants(data))
       .catch(() => setRestaurants([]));
@@ -50,6 +64,7 @@ const Dashboard = () => {
   return (
     <section className="max-w-7xl mx-auto mt-6 px-6">
       <div className="w-[80%] ml-[10%]">
+        {/* Banner */}
         <div className="relative rounded-3xl overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
@@ -63,6 +78,7 @@ const Dashboard = () => {
           </div>
         </div>
 
+        {/* Pass props to children */}
         <Categories data={categories} />
         <OrderOnline data={orders} />
         <PopularRestaurants data={restaurants} />

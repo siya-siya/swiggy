@@ -4,21 +4,22 @@ import { BACKEND_URL } from "../config";
 const AppPromo = () => {
   const [promo, setPromo] = useState({
     message: "For best offers and discounts curated specially for you.",
-    qr: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.swiggy.com"
+    qr: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.swiggy.com",
   });
 
-  // useEffect(() => {
-  //   const fetchPromo = async () => {
-  //     try {
-  //       const res = await fetch(`${BACKEND_URL}promo`);
-  //       const data = await res.json();
-  //       setPromo(data);
-  //     } catch {
-  //       // fallback to default promo
-  //     }
-  //   };
-  //   fetchPromo();
-  // }, []);
+  useEffect(() => {
+    const fetchPromo = async () => {
+      try {
+        const res = await fetch(`${BACKEND_URL}/promo`); // ensure BACKEND_URL has no trailing slash
+        const data = await res.json();
+        setPromo(data);
+      } catch (error) {
+        console.error("Failed to fetch promo:", error);
+        // fallback to default promo (already in state)
+      }
+    };
+    fetchPromo();
+  }, []);
 
   return (
     <div className="bg-[#0d0d0d] text-white py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between">
@@ -35,23 +36,18 @@ const AppPromo = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-3">
           Get the Swiggy App now!
         </h2>
-        <p className="text-gray-400 text-lg">
-          {promo.message}
-        </p>
+        <p className="text-gray-400 text-lg">{promo.message}</p>
       </div>
 
       {/* Right Content */}
       <div className="relative mt-10 md:mt-0 md:w-1/2 flex justify-center">
         <div className="bg-white p-4 rounded-2xl shadow-lg">
-          <img
-            src={promo.qr}
-            alt="QR Code"
-            className="w-40 h-40"
-          />
+          <img src={promo.qr} alt="QR Code" className="w-40 h-40" />
           <p className="text-center text-orange-500 font-semibold mt-2">
             Scan to download
           </p>
         </div>
+
         {/* Floating Food Icons */}
         <img
           src="https://img.icons8.com/3d-fluency/94/hamburger.png"

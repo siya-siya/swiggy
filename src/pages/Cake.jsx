@@ -2,9 +2,7 @@
 import React from "react";
 import { SlidersHorizontal } from "lucide-react";
 
-
-
-const cakesData = [
+const CakesData = [
   {
     id: 1,
     name: "Dmb(Doodh Misthan Bhandar)",
@@ -15,7 +13,6 @@ const cakesData = [
     location: "Bani Park",
     image:
       "  https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/mwxhhhmz9gdap5zrcojj  ",
-      
   },
   {
     id: 2,
@@ -27,7 +24,6 @@ const cakesData = [
     location: "C Scheme",
     image:
       " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/8/14/9957e122-1975-48bc-9947-1645592be390_764055.JPG   ",
-    
   },
   {
     id: 3,
@@ -39,7 +35,6 @@ const cakesData = [
     location: "Bais Godam",
     image:
       " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/18/c6f7ef55-1379-4206-b5d2-08c2f341071e_223161.jpg ",
-      
   },
   {
     id: 4,
@@ -51,7 +46,6 @@ const cakesData = [
     location: "Yudhister Marg",
     image:
       " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/4/24/ada7adf6-5ff9-4a48-a9b0-b0f879f405a7_1002630.JPG ",
-      
   },
 ];
 
@@ -78,13 +72,11 @@ const Cakes = () => {
       </div>
 
       {/* Restaurant count */}
-      <h2 className="mt-6 text-2xl font-bold">
-        181 Restaurants to explore
-      </h2>
+      <h2 className="mt-6 text-2xl font-bold">181 Restaurants to explore</h2>
 
       {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-        {cakesData.map((cake) => (
+        {CakesData.map((cake) => (
           <div
             key={cake.id}
             className="rounded-2xl shadow hover:shadow-lg transition overflow-hidden bg-white"
@@ -105,7 +97,9 @@ const Cakes = () => {
             <div className="p-3">
               <h3 className="font-bold">{cake.name}</h3>
               <div className="flex items-center text-sm text-gray-700 mt-1">
-                <span className="text-green-600 font-semibold">★ {cake.rating}</span>
+                <span className="text-green-600 font-semibold">
+                  ★ {cake.rating}
+                </span>
                 <span className="mx-2">•</span>
                 <span>{cake.time}</span>
               </div>

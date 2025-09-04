@@ -1,55 +1,53 @@
 import React from "react";
 import { Star } from "lucide-react";
-import { getChinese} from "../API/Api";
 
-const restaurants = await getChinese();
 
-// const restaurants = [
-//   {
-//     id: 1,
-//     name: "Chinese Wok",
-//     rating: 4.2,
-//     time: "30-40 mins",
-//     desc: "Chinese, Asian, Tibetan, Desserts",
-//     location: "Vivek Vihar",
-//     img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2024/6/7/38c2e066-8dd1-453d-b7c9-a40b4706dd55_8f6bfe25-466b-4c8a-88a5-73c27e254c42.jpg_compressed  ",
-//     offer: "ITEMS AT ₹129",
-//     isAd: true,
-//   },
-//   {
-//     id: 2,
-//     name: "Urban Chinese",
-//     rating: 4.1,
-//     time: "30-35 mins",
-//     desc: "Chinese",
-//     location: "MI Road",
-//     img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/0a6b932a25017f42fd3d4d7bcc6d798c   ",
-//     offer: "20% OFF UPTO ₹120",
-//     isAd: false,
-//   },
-//   {
-//     id: 3,
-//     name: "Shreeji Chinese Fast Food",
-//     rating: 4.4,
-//     time: "40-50 mins",
-//     desc: "Chinese, Fast Food, Burgers",
-//     location: "Lal Kothi",
-//     img: "  https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2025/2/19/c6af923a-0d48-434b-96d1-91bf19f8bb11_e558d093-81b2-4d04-9e85-e236bd5b2734.jpg",
-//     offer: "₹100 OFF ABOVE ₹199",
-//     isAd: true,
-//   },
-//   {
-//     id: 4,
-//     name: "Chao Chinese Bistro - Holiday Inn",
-//     rating: 4.3,
-//     time: "35-40 mins",
-//     desc: "Chinese, Asian, Thai",
-//     location: "C Scheme",
-//     img: " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/qg565sekubsrw8a22w5o   ",
-//     offer: "₹125 OFF ABOVE ₹199",
-//     isAd: false,
-//   },
-// ];
+const restaurants = [
+  {
+    id: 1,
+    name: "Chinese Wok",
+    rating: 4.2,
+    time: "30-40 mins",
+    desc: "Chinese, Asian, Tibetan, Desserts",
+    location: "Vivek Vihar",
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2024/6/7/38c2e066-8dd1-453d-b7c9-a40b4706dd55_8f6bfe25-466b-4c8a-88a5-73c27e254c42.jpg_compressed  ",
+    offer: "ITEMS AT ₹129",
+    isAd: true,
+  },
+  {
+    id: 2,
+    name: "Urban Chinese",
+    rating: 4.1,
+    time: "30-35 mins",
+    desc: "Chinese",
+    location: "MI Road",
+    img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/0a6b932a25017f42fd3d4d7bcc6d798c   ",
+    offer: "20% OFF UPTO ₹120",
+    isAd: false,
+  },
+  {
+    id: 3,
+    name: "Shreeji Chinese Fast Food",
+    rating: 4.4,
+    time: "40-50 mins",
+    desc: "Chinese, Fast Food, Burgers",
+    location: "Lal Kothi",
+    img: "  https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2025/2/19/c6af923a-0d48-434b-96d1-91bf19f8bb11_e558d093-81b2-4d04-9e85-e236bd5b2734.jpg",
+    offer: "₹100 OFF ABOVE ₹199",
+    isAd: true,
+  },
+  {
+    id: 4,
+    name: "Chao Chinese Bistro - Holiday Inn",
+    rating: 4.3,
+    time: "35-40 mins",
+    desc: "Chinese, Asian, Thai",
+    location: "C Scheme",
+    img: " https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/qg565sekubsrw8a22w5o   ",
+    offer: "₹125 OFF ABOVE ₹199",
+    isAd: false,
+  },
+];
 
 const ChinesePage = () => {
   return (
