@@ -27,7 +27,7 @@ const Navbar = () => {
       } else {
         alert("Failed to send OTP");
       }
-    } catch (error) {
+    } catch ( error) {
       alert("Error sending OTP");
     }
   };

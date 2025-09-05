@@ -3,22 +3,22 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./Components/Header";
-import Dashboard from "./Pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import Categories from "./Components/Categories";
-import LoginPage from "./Pages/Login";   // ✅ match folder casing
-import SignIn from "./Pages/SignIn";
+import LoginPage from "./pages/Login";   // ✅ match folder casing
+import SignIn from "./pages/SignIn";
 import InfoSection from "./Components/InfoSection";
 import AppPromo from "./Components/AppPromo";
 import Footer from "./Components/Footer";
-import Pizza from "./Pages/Pizza";
-import Burger from "./Pages/Burger";
-import Cakes from "./Pages/Cake";
-import Biryani from "./Pages/Biryani";
-import Chinese from "./Pages/Chinese";
-import Dhokla from "./Pages/Dhokla";
-import NorthIndia from "./Pages/NorthIndia";
+import Pizza from "./pages/Pizza";
+import Burger from "./pages/Burger";
+import Cakes from "./pages/Cake";
+import Biryani from "./pages/Biryani";
+import Chinese from "./pages/Chinese";
+import Dhokla from "./pages/Dhokla";
+import NorthIndia from "./pages/NorthIndia";
 import { BACKEND_URL } from "./config";   // ✅ added
-import Khichdi from "./Pages/Khichdi";
+import Khichdi from "./pages/Khichdi";
 import Instamart from "./Components/Instamart";
 
 const App = () => {
@@ -54,8 +54,7 @@ const App = () => {
           <Route path="/dhokla" element={<Dhokla />} /> 
           <Route path="/NorthIndia" element={<NorthIndia/>}/>
           <Route path="/Khichdi" element={<Khichdi/>}/>
-          <Route path="/Instamart" element={<Instamart/>}/>
-
+          <Route path="/Instamart" element={<Instamart/>}/> 
         </Routes>
       </Router>
     </div>
