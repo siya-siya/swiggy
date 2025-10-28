@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./Components/Header";
 import Dashboard from "./pages/Dashboard";
-import Categories from "./Components/Categories";
 import LoginPage from "./pages/Login";   // ✅ match folder casing
 import SignIn from "./pages/SignIn";
 import InfoSection from "./Components/InfoSection";
