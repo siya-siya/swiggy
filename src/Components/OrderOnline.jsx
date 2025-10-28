@@ -88,7 +88,9 @@ export default function OrderOnline() {
             <div className="p-3">
               <h3 className="font-bold text-lg">{res.name}</h3>
               <p className="text-sm text-gray-600 flex items-center">
-                <span className="text-green-600 font-bold mr-2">★ {res.rating}</span>
+                <span className="text-green-600 font-bold mr-2">
+                  ★ {res.rating}
+                </span>
                 • {res.time}
               </p>
               <p className="text-sm text-gray-500">{res.cuisines}</p>
@@ -99,4 +101,4 @@ export default function OrderOnline() {
       </div>
     </div>
   );
-};
+}

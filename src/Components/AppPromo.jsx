@@ -7,19 +7,28 @@ const AppPromo = () => {
     qr: "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.swiggy.com",
   });
 
+  // useEffect(() => {
+  //   const fetchPromo = async () => {
+  //     try {
+  //       const res = await fetch(`${BACKEND_URL}/promo`); // ensure BACKEND_URL has no trailing slash
+  //       const data = await res.json();
+  //       setPromo(data);
+  //     } catch (error) {
+  //       console.error("Failed to fetch promo:", error);
+  //       // fallback to default promo (already in state)
+  //     }
+  //   };
+  //   fetchPromo();
+  // }, []);
+
+
   useEffect(() => {
-    const fetchPromo = async () => {
-      try {
-        const res = await fetch(`${BACKEND_URL}/promo`); // ensure BACKEND_URL has no trailing slash
-        const data = await res.json();
-        setPromo(data);
-      } catch (error) {
-        console.error("Failed to fetch promo:", error);
-        // fallback to default promo (already in state)
-      }
-    };
-    fetchPromo();
-  }, []);
+  setPromo({
+    title: "Big Savings on Instamart!",
+    description: "Get up to 50% off on groceries 🥦",
+  });
+}, []);
+
 
   return (
     <div className="bg-[#0d0d0d] text-white py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between">
@@ -31,7 +40,7 @@ const AppPromo = () => {
             alt="Swiggy Logo"
             className="w-8 h-8"
           />
-          <span className="text-orange-500 font-semibold text-lg">Swiggy</span>
+          <span className="text-orange-500 font-semibold text-lg">Delivery App</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-3">
           Get the Swiggy App now!

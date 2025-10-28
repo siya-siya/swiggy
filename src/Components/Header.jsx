@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Search, MapPin, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { BACKEND_URL } from "../config"; // backend endpoint
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [showSignIn, setShowSignIn] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
       } else {
         alert("Failed to send OTP");
       }
-    } catch ( error) {
+    } catch (error) {
       alert("Error sending OTP");
     }
   };
@@ -57,13 +58,16 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         {/* Left Section */}
         <div className="flex items-center space-x-6">
-          <div className="flex items-center space-x-1 cursor-pointer" onClick={() => navigate("/")}>
-            <img
+          <div
+            className="flex items-center space-x-1 cursor-pointer"
+            onClick={() => navigate("/")}
+          >
+            {/* <img
               src="https://upload.wikimedia.org/wikipedia/commons/1/13/Swiggy_logo.png"
               alt="Swiggy"
               className="w-8 h-8"
-            />
-            <span className="text-xl font-bold text-orange-500">Swiggy</span>
+            /> */}
+            <span className="text-xl font-bold text-orange-500">Delivery App</span>
           </div>
           <div className="flex items-center text-gray-700 text-sm cursor-pointer">
             <MapPin className="w-4 h-4 text-orange-500 mr-1" />
@@ -91,6 +95,15 @@ const Navbar = () => {
             onClick={() => setShowSignIn(true)}
           />
         </div>
+        {
+          // Instamart Link
+          <Link
+            to="/instamart"
+            className="ml-auto mr-6 px-4 py-2 bg-orange-100 text-orange-600 font-semibold rounded-lg shadow-sm hover:bg-orange-200 transition"
+          >
+            🛒 Instamart
+          </Link>
+        }
       </div>
 
       {/* Popup Sign In / Sign Up Form */}

@@ -56,6 +56,8 @@ const Categories = () => {
         "https://media.istockphoto.com/id/1292564353/photo/assorted-indian-food-on-wooden-background-paneer-tikka-dal-tadka-jeera-rice-roti-dishes-and.jpg?s=1024x1024&w=is&k=20&c=93IIFJmPZZ1wq5PvWbUlW9-5tTWwi5zysinwn4h3JQ0=",
       link: "/NorthIndia",
     },
+
+    
   ]);
 
   const scroll = (direction) => {

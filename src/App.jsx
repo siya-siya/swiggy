@@ -21,6 +21,8 @@ import { BACKEND_URL } from "./config";   // ✅ added
 import Khichdi from "./pages/Khichdi";
 import Instamart from "./Components/Instamart";
 
+
+
 const App = () => {
   console.log("Backend endpoint:", BACKEND_URL);
 
@@ -36,6 +38,7 @@ const App = () => {
             element={
               <>
                 <Dashboard />
+            
                 <InfoSection />
                 <AppPromo />
                 <Footer />
@@ -54,7 +57,8 @@ const App = () => {
           <Route path="/dhokla" element={<Dhokla />} /> 
           <Route path="/NorthIndia" element={<NorthIndia/>}/>
           <Route path="/Khichdi" element={<Khichdi/>}/>
-          <Route path="/Instamart" element={<Instamart/>}/> 
+        <Route path="/Instamart" element={<Instamart />} />
+        
         </Routes>
       </Router>
     </div>
